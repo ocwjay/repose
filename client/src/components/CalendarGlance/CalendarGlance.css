@@ -1,0 +1,122 @@
+.calendarGlance {
+    flex: 3;
+    background-color: #ffffff22;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+    margin-bottom: 1vh;
+}
+
+.calendarContainer {
+    height: 20vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.calendarEntry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px black;
+    margin: 2% auto;
+}
+
+.addIcon {
+    height: auto;
+    width: 5%;
+    cursor: pointer;
+}
+
+.closeIcon {
+    height: auto;
+    width: 4%;
+    cursor: pointer;
+}
+
+.calendarIconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1%;
+}
+
+.calendarIcon {
+    width: 1em;
+    cursor: pointer;
+    margin-right: .5vw;
+}
+
+.calendarTitle {
+    width: 100%;
+    font-weight: bold;
+}
+
+.calendarForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendarLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendarInput, .dateTimeInput {
+    padding: 5px;
+    border-radius: .5em;
+    border: none;
+    margin: 3% 0;
+    height: 2.5em;
+}
+
+.calendarHeader {
+    align-self: flex-start;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.calendarSubmit {
+    border-radius: .5em;
+    height: 2.5em;
+    width: 40%;
+    border: none;
+    box-shadow: 3px 3px 3px #22222299;
+    align-self: flex-end;
+    cursor: pointer;
+    margin: 0 .5vw .5vh 0;
+}
+
+.calendarListIcon {
+    width: 1.5vw;
+    margin-right: .5vw;
+}
+
+.dateTimeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dateTimeLabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .5vh 0;
+}
+
+.dateTimeInput {
+    margin: 0 .5vw;
+}
+
+.calendarTitleInput {
+    margin-right: .5vw;
+}

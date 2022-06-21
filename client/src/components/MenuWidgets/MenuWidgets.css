@@ -1,0 +1,54 @@
+.menuWidgetsContainer {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget {
+    background-color: #ffffff22;
+    border-radius: .5em;
+    flex: 1;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.settingsIcon {
+    height: 5%;
+    width: auto;
+    align-self: flex-end;
+    justify-self: right;
+}
+
+.openWidgetContainer{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    background-color: #ffffff22;
+    border-radius: .5em;
+    padding: 1%;
+}
+
+.closeWidgetIcon {
+    width: 2%;
+    height: auto;
+    cursor: pointer;
+}
+
+.notebookIcon, .horoscopeIcon, .weatherIcon {
+    width: 5vw;
+}
+
+.notesWidget, .horoscopeWidget, .weatherWidget, .comingSoon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

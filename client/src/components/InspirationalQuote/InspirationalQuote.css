@@ -1,0 +1,9 @@
+.quote {
+    color: white;
+    text-align: center;
+}
+
+.quoteBox {
+    flex: 1;
+    margin-bottom: 1%;
+}

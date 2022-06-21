@@ -1,0 +1,82 @@
+textarea {
+    resize: none;
+}
+
+.notesDisplayContainer {
+    height: 50vh;
+    overflow-y: auto;
+}
+
+.noteEntry {
+    padding: 1%;
+    background-color: #ffffff22;
+    margin: 1%;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.iconContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.noteIcon {
+    width: 1.5vw;
+    margin: 3%;
+    cursor: pointer;
+}
+
+.notesForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.notesTextArea {
+    width: 100%;
+    height: 15vh;
+    border-radius: .5em;
+    padding: 1%;
+}
+
+.addNoteBtn, .notesCancelButton {
+    border: none;
+    border-radius: .5em;
+    padding: 1%;
+    box-shadow: 3px 3px 3px #22222299;
+    width: 20%;
+    align-self: flex-end;
+    margin-left: 1%;
+    cursor: pointer;
+}
+
+.addNoteBtn:hover, .notesCancelButton:hover {
+    background-color: #dddddd;
+}
+
+.notesButtonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.notesHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.noteHeaderIcon {
+    width: 3vw;
+}
+
+.noteBody {
+    white-space: pre-line;
+}
