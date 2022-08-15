@@ -1,24 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-require('./config/mongoose.config');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = 8000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(cors({
+    origin: "http://localhost:3000", 
+    credentials: true
+}))
+app.use(cookieParser())
 
+require("./config/mongoose.config")
 
-app.use(
-    cors({
-        origin: 'http://localhost:3000',
-    }),
-);
-
+require('./routes/user.routes')(app);
 require('./routes/todos.routes')(app);
 require('./routes/notes.routes')(app);
 require('./routes/calendar.routes')(app);
 require('./routes/quotes.routes')(app);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+app.listen(process.env.PORT, () => console.log(`You are connected to port ${process.env.PORT}`))
