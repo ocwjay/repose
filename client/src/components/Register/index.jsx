@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Register.css';
 
@@ -9,6 +9,17 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const getCookie = () => {
+        let match = document.cookie.match(RegExp('(?:^|;\\s*)' + "loggedIn" + '=([^;]*)'));
+        return match && match[1];
+    }
+
+    useEffect(() => {
+        if(getCookie() == 'true'){
+            navigate('/');
+        }
+    }, [])
 
     const submitHandler = (e) => {
         e.preventDefault();

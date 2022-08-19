@@ -10,20 +10,28 @@ import MenuTray from '../MenuTray';
 
 function StartingPage() {
     const navigate = useNavigate();
-    //set logged in user here to ensure logging in supplies the info needed, then PUSH THIS SHIT TO GITHUB
     const [user, setUser] = useState({});
 
+    const getCookie = () => {
+        let match = document.cookie.match(RegExp('(?:^|;\\s*)' + "loggedIn" + '=([^;]*)'));
+        return match && match[1];
+    }
+
     useEffect(() => {
-        axios.get("http://localhost:8000/api/users/loggedInUser",
-            { withCredentials: true }
-        )
-            .then((res) => {
-                console.log(res.data);
-                setUser(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+        if(getCookie() !== 'true'){
+            navigate('/home');
+        } else {
+            axios.get("http://localhost:8000/api/users/loggedInUser",
+                { withCredentials: true }
+            )
+                .then((res) => {
+                    console.log(res.data);
+                    setUser(res.data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
     }, [])
 
     const logout = (e) => {
@@ -38,6 +46,7 @@ function StartingPage() {
             .catch((err) => {
                 console.log(err);
             });
+        document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     };
 
     return(

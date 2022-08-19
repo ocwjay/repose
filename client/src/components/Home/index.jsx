@@ -1,8 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
+    const navigate = useNavigate();
+
+    const getCookie = () => {
+        let match = document.cookie.match(RegExp('(?:^|;\\s*)' + "loggedIn" + '=([^;]*)'));
+        return match && match[1];
+    }
+
+    useEffect(() => {
+        if(getCookie() == 'true'){
+            navigate('/');
+        }
+    }, [])
+
     return(
         <div className='homeContainer'>
             <h1>Welcome to Repose!</h1>

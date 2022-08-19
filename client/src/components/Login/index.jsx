@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 
@@ -7,6 +7,17 @@ function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const getCookie = () => {
+        let match = document.cookie.match(RegExp('(?:^|;\\s*)' + "loggedIn" + '=([^;]*)'));
+        return match && match[1];
+    }
+
+    useEffect(() => {
+        if(getCookie() == 'true'){
+            navigate('/');
+        }
+    }, [])
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -16,6 +27,7 @@ function Login() {
         }, {withCredentials: true})
             .then(res => {
                 console.log(res.data);
+                document.cookie = 'loggedIn=true';
                 navigate('/')
             })
             .catch((err) => {
