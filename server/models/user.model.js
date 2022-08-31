@@ -11,8 +11,12 @@ const SettingsSchema = mongoose.Schema({
         default: "#22222299"
     },
     darkMode: {
-        type: Boolean,
-        default: true
+        type: String,
+        enum: [
+            'black',
+            'white'
+        ],
+        default: 'white'
     },
     menuBackgrounds: {
         type: Boolean,

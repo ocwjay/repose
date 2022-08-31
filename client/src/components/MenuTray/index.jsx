@@ -3,7 +3,8 @@ import './MenuTray.css';
 import MenuWidgets from '../MenuWidgets';
 import menuButton from './angle.png';
 
-function MenuTray() {
+function MenuTray(props) {
+    const {user, setUser} = props;
     const [open, setOpen] = useState(false);
     const [width, setWidth] = useState('3vw');
     const [padding, setPadding] = useState('0%');
@@ -28,7 +29,7 @@ function MenuTray() {
             <img src={ menuButton } onClick={ menuWidth } className="menuBtn" style={{ transform: rotate }} />
             {
                 open ?
-                <MenuWidgets /> :
+                <MenuWidgets user={user} setUser={setUser} /> :
                 ''
             }
             

@@ -90,5 +90,19 @@ module.exports = {
                 console.log("Find All Users failed");
                 res.json({ message: "Something went wrong in findAll", error: err })
             })
+    },
+    updateUser: (req, res)=>{
+        User.findOneAndUpdate({_id: req.jwtpayload.id},
+            req.body,
+            {new: true, runValidators: true}
+            )
+            .then((updatedUser)=>{
+                console.log(updatedUser)
+                res.json(updatedUser)
+            })
+            .catch((err)=>{
+                console.log("Error in updateUser");
+                res.status(400).json(err) 
+            })
     }
 }

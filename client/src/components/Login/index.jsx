@@ -53,7 +53,7 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                <input type="submit" value="Register" />
+                <input type="submit" value="Login" />
             </form>
             <Link to='/register'>Don't have an account yet? Click here to sign up!</Link>
         </div>

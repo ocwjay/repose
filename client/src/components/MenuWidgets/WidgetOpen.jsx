@@ -4,9 +4,10 @@ import closeIcon from './cross.png';
 import Notes from './Widgets/Notes';
 import Weather from './Widgets/Weather';
 import Horoscope from './Widgets/Horoscope';
+import Settings from './Widgets/Settings';
 
 function WidgetOpen(props) {
-    const {openWidget, setOpenWidget} = props;
+    const {openWidget, setOpenWidget, user, setUser} = props;
 
     return(
         <div className='openWidgetContainer'>
@@ -22,6 +23,10 @@ function WidgetOpen(props) {
             {
                 openWidget === 'horoscope' ?
                 <Horoscope /> : ''
+            }
+            {
+                openWidget === 'settings' ?
+                <Settings user={user} setUser={setUser} /> : ''
             }
         </div>
     )

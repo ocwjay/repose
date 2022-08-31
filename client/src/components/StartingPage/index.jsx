@@ -30,36 +30,21 @@ function StartingPage() {
                 })
                 .catch((err) => {
                     console.log(err);
+                    document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
                 })
         }
     }, [])
 
-    const logout = (e) => {
-        axios.post("http://localhost:8000/api/users/logout",
-        {}, {withCredentials: true},
-        )
-            .then((res) => {
-                console.log(res);
-                console.log(res.data);
-                navigate("/home");
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        document.cookie = "loggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    };
-
     return(
         <div className='startingPageContainer'>
             <div className='mainWidgetsContainer'>
-                <p className='mainWidgets welcome'>Welcome {user.name}!</p> {/*Change this to be it's own component, with a random greeting and logged in user fname*/}
-                <p onClick={logout}>Logout</p>
+                <p className='mainWidgets welcome'>Welcome {user.name}!</p>
                 <DateTime />
                 <InspirationalQuote />
                 <CalendarGlance />
                 <ToDoGlance />
             </div>
-            <MenuTray />
+            <MenuTray user={user} setUser={setUser} />
         </div>
     );
 };

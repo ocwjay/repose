@@ -24,6 +24,7 @@
     width: auto;
     align-self: flex-end;
     justify-self: right;
+    cursor: pointer;
 }
 
 .openWidgetContainer{
