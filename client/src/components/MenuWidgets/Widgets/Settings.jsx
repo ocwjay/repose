@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../MenuWidgets.css';
+import './Settings.css';
 import SettingsIcon from '../../icons/SettingsIcon';
 
 function Settings(props) {
@@ -30,6 +30,7 @@ function Settings(props) {
 
     return(
         <div className='settingsContainer'>
+            <p>{themeRadio}</p>
             <div className='settingsHeader'>
                 <SettingsIcon user={user} iconClass='settingsHeaderIcon' />
                 <h2>Settings</h2>
@@ -43,9 +44,8 @@ function Settings(props) {
                 </label>
                 <div>
                     <p>Theme:</p>
-                    {/* Something here is broken, radio wont check */}
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#22222299'
                         checked={themeRadio === '#22222299'}
@@ -53,7 +53,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#ffffff99'
                         checked={themeRadio === '#ffffff99'}
@@ -61,7 +61,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#ff000099'
                         checked={themeRadio === '#ff000099'}
@@ -69,7 +69,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#0066ff99'
                         checked={themeRadio === '#0066ff99'}
@@ -77,7 +77,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#66339999'
                         checked={themeRadio === '#66339999'}
@@ -85,7 +85,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='themeRadio'
                         value='#00000000'
                         checked={themeRadio === '#00000000'}
@@ -98,7 +98,7 @@ function Settings(props) {
                 <div>
                     Text Color:
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='textColorRadio'
                         value='#000000'
                         checked={textColorRadio === '#000000'}
@@ -106,7 +106,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='textColorRadio'
                         value='#ffffff'
                         checked={textColorRadio === '#ffffff'}
@@ -114,7 +114,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='textColorRadio'
                         value='#ff0000'
                         checked={textColorRadio === '#ff0000'}
@@ -122,7 +122,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='textColorRadio'
                         value='#0066ff'
                         checked={textColorRadio === '#0066ff'}
@@ -130,7 +130,7 @@ function Settings(props) {
                         className='radioColor' />
                     </label>
                     <label>
-                        <input type="radio"
+                        <input type='radio'
                         name='textColorRadio'
                         value='#663399'
                         checked={textColorRadio === '#663399'}
@@ -144,22 +144,20 @@ function Settings(props) {
                     value={lightDarkMode}
                     onChange={(e) => setLightDarkMode(e.target.value)}
                     >
-                        <option value="#22222288">Dark</option>
-                        <option value="#ffffff22">Light</option>
+                        <option value='#22222288'>Dark</option>
+                        <option value='#ffffff22'>Light</option>
                     </select>
                 </label>
                 <div>
                     Background Image:
                     <label>
-                    <label>
-                        <input type="radio"
-                        name='themeRadio'
+                        <input type='radio'
+                        name='backgroundImageRadio'
                         value='https://cdn.pixabay.com/photo/2016/10/18/21/22/beach-1751455_960_720.jpg'
                         checked={backgroundImageRadio === 'https://cdn.pixabay.com/photo/2016/10/18/21/22/beach-1751455_960_720.jpg'}
                         onChange={(e) => setBackgroundImageRadio(e.target.value)}
                         className='radioBackground' />
                         {/* <span className='xRadioSpan'>X</span> */}
-                    </label>
                     </label>
                 </div>
                 <input type="submit" value="Save Changes" />

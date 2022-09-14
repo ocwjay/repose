@@ -4,7 +4,6 @@ import EditIcon from '../../icons/EditIcon';
 import CloseIcon from '../../icons/CloseIcon';
 import axios from 'axios';
 
-
 function NotesDisplay(props) {
     const {setNoteValue, setNoteID, setEdit, notes, setNotes, user} = props;
 
