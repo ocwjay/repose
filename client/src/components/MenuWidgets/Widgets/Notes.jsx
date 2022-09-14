@@ -32,6 +32,7 @@ function Notes(props) {
                 setEdit={setEdit}
                 notes={notes}
                 setNotes={setNotes}
+                user={user}
                 />
         </div>
     )

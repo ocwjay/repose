@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './Notes.css';
-import editIcon from './edit.png';
-import deleteIcon from './cross.png';
+import EditIcon from '../../icons/EditIcon';
+import CloseIcon from '../../icons/CloseIcon';
 import axios from 'axios';
 
 
 function NotesDisplay(props) {
-    const {setNoteValue, setNoteID, setEdit, notes, setNotes} = props;
-    
+    const {setNoteValue, setNoteID, setEdit, notes, setNotes, user} = props;
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/notes')
@@ -54,11 +53,15 @@ function NotesDisplay(props) {
                             { note.note }
                         </p>
                         <div className='iconContainer'>
-                            <img src={ editIcon } alt="" onClick={ (e) => {
+                            <div onClick={ (e) => {
                                 editHandler(note._id);
                                 setEdit(true);
-                            } } className='noteIcon' />
-                            <img src={ deleteIcon } alt="" onClick={ (e) => deleteHandler(note._id) } className='noteIcon' />
+                            } }>
+                                <EditIcon user={user} iconClass='noteIcon' />
+                            </div>
+                            <div onClick={ (e) => deleteHandler(note._id) }>
+                                <CloseIcon user={user} iconClass='noteIcon' />
+                            </div>
                         </div>
                     </div>
                 ))
