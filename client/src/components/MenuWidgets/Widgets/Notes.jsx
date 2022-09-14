@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import NotebookIcon from '../../icons/NotebookIcon';
 import './Notes.css';
 import NotesDisplay from './NotesDisplay';
 import NotesForm from './NotesForm';
-import notebookIcon from '../notebook.png';
 
 function Notes(props) {
+    const {user} = props;
     const [noteValue, setNoteValue] = useState('');
     const [noteID, setNoteID] = useState('');
     const [edit, setEdit] = useState(false);
@@ -13,7 +14,7 @@ function Notes(props) {
     return(
         <div className='notesContainer'>
             <div className='notesHeader'>
-                <img src={notebookIcon} alt="" className='noteHeaderIcon' />
+                <NotebookIcon user={user} iconClass='noteHeaderIcon' />
                 <h2>Notes</h2>
             </div>
             <NotesForm

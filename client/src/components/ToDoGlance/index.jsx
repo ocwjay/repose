@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './ToDoGlance.css';
-import addIcon from './plus.png';
-import closeIcon from './cross.png';
-import todoIcon from './list-check.png';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
+import TodoIcon from '../icons/TodoIcon';
+import PlusIcon from '../icons/PlusIcon';
+import CloseIcon from '../icons/CloseIcon';
 
-function ToDoGlance() {
+function ToDoGlance(props) {
+    const {user} = props;
     const [view, setView] = useState('list');
     const [todoID, setTodoID] = useState('');
 
@@ -20,24 +21,27 @@ function ToDoGlance() {
     }
 
     return(
-        <div  className='mainWidgets toDoGlance'>
+        <div className='mainWidgets toDoGlance' style={{ backgroundColor: user.settings?.lightDarkMode }}>
             <div className='toDoHeader'>
-                <img src={todoIcon} alt="" className='todoListIcon' />
+                <TodoIcon user={user} />
                 <h2>To Do List</h2>
             </div>
             <div className='toDoContainer'>
                 {
                     view === 'list' ? 
-                    <ToDoList setView={setView} setTodoID={setTodoID} /> :
-                    <ToDoForm todoID={todoID} setView={setView} setTodoID={setTodoID} />
+                    <ToDoList setView={setView} setTodoID={setTodoID} user={user} /> :
+                    <ToDoForm todoID={todoID} setView={setView} setTodoID={setTodoID} user={user} />
                 }
             </div>
             {
                 view === 'list' ?
-                <img src={ addIcon } alt="" className='addIcon' onClick={ viewHandler } /> :
-                <img src={ closeIcon } alt="" className='closeIcon' onClick={ viewHandler } /> 
+                <div className='plusIconContainer' onClick={ viewHandler }>
+                    <PlusIcon iconClass='plusIcon' user={user} /> 
+                </div>:
+                <div className='closeIconContainer' onClick={ viewHandler }>
+                    <CloseIcon iconClass='closeIcon' user={user} />
+                </div>
             }
-            
         </div>
     );
 };

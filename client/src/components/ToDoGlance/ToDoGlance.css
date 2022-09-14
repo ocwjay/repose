@@ -1,6 +1,5 @@
 .toDoGlance {
     flex: 3;
-    background-color: #ffffff22;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,19 +20,29 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid 1px black;
+    /* border-bottom: solid 1px black; */
     margin: 2% auto;
 }
 
-.addIcon {
-    height: auto;
+.plusIconContainer {
     width: 5%;
+    height: auto;
+}
+
+.plusIcon {
+    height: auto;
+    width: 100%;
     cursor: pointer;
+}
+
+.closeIconContainer {
+    width: 5%;
+    height: auto;
 }
 
 .closeIcon {
     height: auto;
-    width: 4%;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -51,7 +60,7 @@
 }
 
 .toDoTitle {
-    width: 100%
+    width: 100%;
 }
 
 .toDoForm {

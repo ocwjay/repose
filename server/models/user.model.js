@@ -5,22 +5,33 @@ const SettingsSchema = mongoose.Schema({
     theme: {
         type: String,
         enum: [
-            "#22222299",
-            "#ffffff99"
+            '#22222299',
+            '#ffffff99',
+            '#ff000099',
+            '#0066ff99',
+            '#66339999',
+            '#00000000'
         ],
         default: "#22222299"
     },
-    darkMode: {
+    textColor: {
         type: String,
         enum: [
-            'black',
-            'white'
+            '#ffffff',
+            '#000000',
+            '#ff0000',
+            '#0066ff',
+            '#663399'
         ],
-        default: 'white'
+        default: '#ffffff'
     },
-    menuBackgrounds: {
-        type: Boolean,
-        default: true
+    lightDarkMode: {
+        type: String,
+        enum: [
+            '#22222288',
+            '#ffffff22'
+        ],
+        default: '#ffffff22'
     },
     backgroundImg: {
         type: String,

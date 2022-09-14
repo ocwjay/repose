@@ -15,7 +15,7 @@ module.exports = {
                 })
             })
             .catch((err)=>{
-                console.log("registration was not successful!")
+                console.log("Registration was not successful")
                 res.status(400).json(err)
             })
     },

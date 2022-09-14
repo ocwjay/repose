@@ -12,17 +12,20 @@
 }
 
 .widget {
-    background-color: #ffffff22;
     border-radius: .5em;
     flex: 1;
     margin: 1%;
     cursor: pointer;
 }
 
-.settingsIcon {
-    height: 5%;
-    width: auto;
+.settingsIconContainer {
     align-self: flex-end;
+    height: 5%;
+}
+
+.settingsIcon {
+    height: 100%;
+    width: auto;
     justify-self: right;
     cursor: pointer;
 }
@@ -32,7 +35,6 @@
     flex-direction: column;
     width: 95%;
     height: 95%;
-    background-color: #ffffff22;
     border-radius: .5em;
     padding: 1%;
 }

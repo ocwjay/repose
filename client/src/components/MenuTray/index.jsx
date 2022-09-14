@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MenuTray.css';
 import MenuWidgets from '../MenuWidgets';
-import menuButton from './angle.png';
+import AngleIcon from '../icons/AngleIcon';
 
 function MenuTray(props) {
     const {user, setUser} = props;
@@ -25,8 +25,10 @@ function MenuTray(props) {
     }
 
     return(
-        <div id='menuTray' style={{ width: width, padding: padding }}>
-            <img src={ menuButton } onClick={ menuWidth } className="menuBtn" style={{ transform: rotate }} />
+        <div id='menuTray' style={{ width: width, padding: padding, backgroundColor: user.settings?.theme }}>
+            <div onClick={ menuWidth } className='menuBtn' style={{ transform: rotate }}>
+                <AngleIcon user={user} iconClass='menuBtn' />
+            </div>
             {
                 open ?
                 <MenuWidgets user={user} setUser={setUser} /> :

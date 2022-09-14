@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DateTime.css';
 
-function DateTime() {
+function DateTime(props) {
     const [date, setDate] = useState(new Date());
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 

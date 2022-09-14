@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MenuWidgets.css';
-import settingsIcon from './settings-sliders.png';
+import SettingsIcon from '../icons/SettingsIcon';
 import WidgetsClosed from './WidgetsClosed';
 import WidgetOpen from './WidgetOpen';
 
@@ -12,7 +12,10 @@ function MenuWidgets(props) {
         <div className='menuWidgetsContainer'>
             {
                 openWidget === '' ?
-                <WidgetsClosed openWidget={openWidget} setOpenWidget={setOpenWidget} /> :
+                <WidgetsClosed
+                openWidget={openWidget}
+                setOpenWidget={setOpenWidget}
+                user={user} /> :
                 <WidgetOpen
                 openWidget={openWidget}
                 setOpenWidget={setOpenWidget}
@@ -20,7 +23,9 @@ function MenuWidgets(props) {
                 setUser={setUser}
                 />
             }
-            <img src={ settingsIcon } alt="" className='settingsIcon' onClick={(e) => setOpenWidget('settings')} /> 
+            <div onClick={(e) => setOpenWidget('settings')} className='settingsIconContainer'>
+                <SettingsIcon user={user} iconClass='settingsIcon' />
+            </div>
         </div>
     )
 };

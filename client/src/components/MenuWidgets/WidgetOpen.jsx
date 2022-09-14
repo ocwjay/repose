@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MenuWidgets.css';
-import closeIcon from './cross.png';
+import CloseIcon from '../icons/CloseIcon';
 import Notes from './Widgets/Notes';
 import Weather from './Widgets/Weather';
 import Horoscope from './Widgets/Horoscope';
@@ -10,11 +10,13 @@ function WidgetOpen(props) {
     const {openWidget, setOpenWidget, user, setUser} = props;
 
     return(
-        <div className='openWidgetContainer'>
-            <img src={closeIcon} alt="" onClick={(e) => setOpenWidget('')} className="closeWidgetIcon" />
+        <div className='openWidgetContainer' style={{ backgroundColor: user.settings?.lightDarkMode }}>
+            <div onClick={(e) => setOpenWidget('')}>
+                <CloseIcon user={user} iconClass='closeWidgetIcon' />
+            </div>
             {
                 openWidget === 'notes' ?
-                <Notes /> : ''
+                <Notes user={user} /> : ''
             }
             {
                 openWidget === 'weather' ?

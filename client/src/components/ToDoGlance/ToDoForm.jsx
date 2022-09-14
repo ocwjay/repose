@@ -3,7 +3,7 @@ import axios from 'axios';
 import './ToDoGlance.css';
 
 function ToDoForm(props) {
-    const {todoID, setView} = props;
+    const {todoID, setView, user} = props;
     const [title, setTitle] = useState('');
 
     useEffect(() => {

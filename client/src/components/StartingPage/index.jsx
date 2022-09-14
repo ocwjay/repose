@@ -36,13 +36,13 @@ function StartingPage() {
     }, [])
 
     return(
-        <div className='startingPageContainer'>
-            <div className='mainWidgetsContainer'>
+        <div className='startingPageContainer' style={{ color: user.settings?.textColor }}>
+            <div className='mainWidgetsContainer' style={{ backgroundColor: user.settings?.theme }}>
                 <p className='mainWidgets welcome'>Welcome {user.name}!</p>
                 <DateTime />
                 <InspirationalQuote />
-                <CalendarGlance />
-                <ToDoGlance />
+                <CalendarGlance user={user} />
+                <ToDoGlance user={user} />
             </div>
             <MenuTray user={user} setUser={setUser} />
         </div>

@@ -1,58 +1,68 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import './MenuWidgets.css';
-import notebookIcon from './notebook.png';
-import horoscopeIcon from './sparkles.png';
-import weatherIcon from './cloud-sun.png';
+import TemperatureIcon from '../icons/TemperatureIcon';
+import NotebookIcon from '../icons/NotebookIcon';
+import SparklesIcon from '../icons/SparklesIcon';
 
 function WidgetsClosed(props) {
-    const {openWidget, setOpenWidget} = props;
+    const {openWidget, setOpenWidget, user} = props;
 
     return(
         <div className='menuWidgetsContainer'>
             <div className='col'>
-                <div className='widget notesWidget' onClick={(e) => {
+                <div className='widget notesWidget'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}
+                onClick={(e) => {
                     if(openWidget === 'notes') {
                         setOpenWidget('');
                     } else {
                         setOpenWidget('notes');
                     }
                 }}>
-                    <img src={notebookIcon} alt="" className='notebookIcon' />
+                    <NotebookIcon user={user} iconClass='notebookIcon' />
                     <h2>Notes</h2>
                 </div>
-                <div className='widget weatherWidget' onClick={(e) => {
+                <div className='widget weatherWidget'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}
+                onClick={(e) => {
                     if(openWidget === 'weather') {
                         setOpenWidget('');
                     } else {
                         setOpenWidget('weather');
                     }
                 }}>
-                    <img src={weatherIcon} alt="" className='weatherIcon' />
+                    <TemperatureIcon user={user} iconClass='weatherIcon' />
                     <h2>Weather</h2>
                 </div>
-                <div className='widget comingSoon'>
+                <div className='widget comingSoon'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}>
                     <h2>Coming Soon!</h2>
                 </div>
                 {/* <div className='widget'>Widget</div> */}
             </div>
             <div className='col'>
-            <div className='widget horoscopeWidget' onClick={(e) => {
+            <div className='widget horoscopeWidget'
+            style={{ backgroundColor: user.settings?.lightDarkMode }}
+            onClick={(e) => {
                     if(openWidget === 'horoscope') {
                         setOpenWidget('');
                     } else {
                         setOpenWidget('horoscope');
                     }
                 }}>
-                    <img src={horoscopeIcon} alt="" className='horoscopeIcon' />
+                    <SparklesIcon user={user} iconClass='horoscopeIcon' />
                     <h2>Horoscope</h2>
                 </div>
-                <div className='widget comingSoon'>
+                <div className='widget comingSoon'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}>
                     <h2>Coming Soon!</h2>
                 </div>
-                <div className='widget comingSoon'>
+                <div className='widget comingSoon'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}>
                     <h2>Coming Soon!</h2>
                 </div>
-                <div className='widget comingSoon'>
+                <div className='widget comingSoon'
+                style={{ backgroundColor: user.settings?.lightDarkMode }}>
                     <h2>Coming Soon!</h2>
                 </div>
             </div>

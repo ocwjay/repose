@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ToDoGlance.css';
-import deleteIcon from './cross.png';
-import editIcon from './edit.png';
+import CloseIcon from '../icons/CloseIcon';
+import EditIcon from '../icons/EditIcon';
 
 function ToDoList(props) {
     const [todos, setTodos] = useState([]);
-    const {setView, setTodoID} = props;
+    const {setView, setTodoID, user} = props;
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/todos')
@@ -33,21 +33,24 @@ function ToDoList(props) {
             });
     };
 
-//YOU JUST NEED TO FIGURE OUT THE ADD NOW. AFTER THAT, EDIT WILL BE EASY
     return(
         <div>
             {
                 todos.map((todo) => (
-                    <div key={todo._id} className='toDoEntry'>
+                    <div key={todo._id} className='toDoEntry' style={{ borderBottom: `solid 1px ${user.settings?.textColor}` }}>
                         <p className='toDoTitle'>
                             { todo.title }
                         </p>
                         <div className='toDoIconContainer'>
-                            <img src={ editIcon } alt="" onClick={ (e) => {
+                            <div onClick={ (e) => {
                                 setTodoID(todo._id);
                                 setView('form');
-                            } } className='todoIcon' />
-                            <img src={ deleteIcon } alt="" onClick={ (e) => deleteHandler(todo._id) } className='todoIcon' />
+                            } }>
+                                <EditIcon user={user} iconClass='todoIcon' />
+                            </div>
+                            <div onClick={ (e) => deleteHandler(todo._id) }>
+                                <CloseIcon user={user} iconClass='todoIcon' />
+                            </div>
                         </div>
                     </div>
                 ))

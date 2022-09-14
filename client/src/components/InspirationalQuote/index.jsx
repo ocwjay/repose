@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './InspirationalQuote.css';
 import axios from 'axios';
 
-function InspirationalQuote() {
+function InspirationalQuote(props) {
     const [quote, setQuote] = useState({});
 
     const randomQuoteId = (max) => {
