@@ -47,7 +47,7 @@ function NotesDisplay(props) {
         <div className='notesDisplayContainer'>
             {
                 notes.map((note) => (
-                    <div key={note._id} className='noteEntry'>
+                    <div key={note._id} className='noteEntry' style={{ backgroundColor: user.settings?.lightDarkMode }}>
                         <p className='noteBody'>
                             { note.note }
                         </p>

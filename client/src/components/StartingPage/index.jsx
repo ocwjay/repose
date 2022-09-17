@@ -36,7 +36,13 @@ function StartingPage() {
     }, [])
 
     return(
-        <div className='startingPageContainer' style={{ color: user.settings?.textColor }}>
+        <div className='startingPageContainer' style={{
+            color: user.settings?.textColor,
+            backgroundImage: `url(${user.settings?.backgroundImg})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+            }}>
             <div className='mainWidgetsContainer' style={{ backgroundColor: user.settings?.theme }}>
                 <p className='mainWidgets welcome'>Welcome {user.name}!</p>
                 <DateTime />

@@ -1,3 +1,200 @@
 .settingsHeaderIcon {
     width: 3vw;
 }
+
+.settingsForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.nameInput {
+    width: 13vw;
+    padding: 5px;
+    border-radius: .5em;
+    border: none;
+    height: 2.5em;
+}
+
+.lightDarkSelect {
+    width: 4vw;
+    padding: 5px;
+    border-radius: .5em;
+    border: none;
+    height: 2.5em;
+}
+
+.settingsHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.settingsHeader h2 {
+    margin-left: .5vw;
+}
+
+.settingsSubmitBtn {
+    width: 8vw;
+    border: none;
+    border-radius: .5em;
+    padding: 1%;
+    box-shadow: 3px 3px 3px #22222299;
+    cursor: pointer;
+    margin-top: 10vh;
+}
+
+.settingsSubmitBtn:hover {
+    background-color: #dddddd;
+}
+
+.radioContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.xRadioIcon {
+    position: relative;
+    width: 25px;
+    top: -2px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input, .bgContainer input {
+    opacity: 0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.black {
+    background-color: #222222;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.red {
+    background-color: #ff0000;
+}
+
+.blue {
+    background-color: #0066ff;
+}
+
+.purple {
+    background-color: #663399;
+}
+
+.xRadioSpan {
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark, .bgContainer:hover input ~ .bgCheckmark {
+    box-shadow: 3px 3px 3px #22222299;
+}
+
+.checkmark:after, .bgCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after, .bgContainer input:checked ~ .bgCheckmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #aaa;
+}
+
+.bgContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 200px;
+}
+
+.bgCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 150px;
+    border-radius: 1em;
+}
+
+.bgContainer .bgCheckmark:after {
+    top: 10px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #eee;
+}
+
+.bgBeach{
+    background-image: url(https://cdn.pixabay.com/photo/2016/10/18/21/22/beach-1751455_960_720.jpg);
+    background-size: cover;
+}
+
+.bgPolygons{
+    background-image: url(https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png);
+    background-size: cover;
+}
+
+.bgBricks{
+    background-image: url(https://cdn.pixabay.com/photo/2014/09/24/16/28/bricks-459299_960_720.jpg);
+    background-size: cover;
+}
+
+.bgHills{
+    background-image: url(https://cdn.pixabay.com/photo/2014/07/28/20/39/sunset-404072_960_720.jpg);
+    background-size: cover;
+}

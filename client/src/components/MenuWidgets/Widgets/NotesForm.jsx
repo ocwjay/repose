@@ -11,7 +11,7 @@ function NotesForm(props) {
         if(noteID){
             console.log(`Note is ${noteValue}`);
             axios.put(`http://localhost:8000/api/notes/${noteID}`, {
-                note : noteValue
+                note: noteValue
             })
                 .then( res => {
                     console.log(res);
