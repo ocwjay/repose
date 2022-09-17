@@ -1,6 +1,5 @@
 .calendarGlance {
     flex: 3;
-    background-color: #ffffff22;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,13 +27,13 @@
 
 .addIcon {
     height: auto;
-    width: 5%;
+    width: 100%;
     cursor: pointer;
 }
 
 .closeIcon {
     height: auto;
-    width: 4%;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -63,7 +62,10 @@
 
 .calendarLabel {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 3%;
 }
 
 .calendarInput, .dateTimeInput {
@@ -118,5 +120,16 @@
 }
 
 .calendarTitleInput {
-    margin-right: .5vw;
+    width: 19vw;
+    margin-right: 1vw;
+}
+
+.plusIconContainer {
+    width: 5%;
+    height: auto;
+}
+
+.closeIconContainer {
+    width: 5%;
+    height: auto;
 }

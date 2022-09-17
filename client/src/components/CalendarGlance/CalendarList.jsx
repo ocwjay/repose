@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CalendarGlance.css';
-import deleteIcon from './cross.png';
-import editIcon from './edit.png';
+import CloseIcon from '../icons/CloseIcon';
+import EditIcon from '../icons/EditIcon';
 
 function CalendarList(props) {
     const [calendarEvents, setCalendarEvents] = useState([]);
-    const {setView, setCalendarEventID} = props;
+    const {setView, setCalendarEventID, user} = props;
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/calendarEvents')
@@ -54,11 +54,15 @@ function CalendarList(props) {
                             </div>
                         </div>
                         <div className='calendarIconContainer'>
-                            <img src={ editIcon } alt="" onClick={ (e) => {
+                            <div onClick={ (e) => {
                                 setCalendarEventID(event._id);
                                 setView('form');
-                            } } className='calendarIcon' />
-                            <img src={ deleteIcon } alt="" onClick={ (e) => deleteHandler(event._id) } className='calendarIcon' />
+                            } } className='calendarIconDiv'>
+                                <EditIcon user={user} iconClass='calendarIcon' />
+                            </div>
+                            <div onClick={ (e) => deleteHandler(event._id) }>
+                                <CloseIcon user={user} iconClass='calendarIcon' />
+                            </div>
                         </div>
                     </div>
                 ))
